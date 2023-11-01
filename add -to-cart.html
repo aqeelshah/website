@@ -76,6 +76,10 @@ a{
 .list-unstyled a{
     color: black;
 }
+.product-thumbnail{
+    height: 200px; 
+    width: 200px;   
+}
 
 </style>
 <body>
@@ -103,6 +107,35 @@ a{
         </div>
        
         </div>
+        <div class="container">
+            <div class="row mb-5">
+              <form class="col-md-12" method="post">
+                <div class="site-blocks-table">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th class="product-thumbnail">Image</th>
+                                <th class="product-name">Product</th>
+                                <th class="product-price">Price</th>
+                                <th class="product-price">Quantity</th>
+                                <th class="product-price">Total</th>
+                                <th class="product-price">Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-items">
+                   
+                        </tbody>
+                    </table>
+           
+        
+      
+
+
+
+
+
+
+
         <footer class="footer-section">
 			<div class="container">
 
@@ -162,7 +195,9 @@ a{
 
 			</div>
 		</footer>
+
         <script src="script.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  
-</body>  
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </body> 
 </html>
