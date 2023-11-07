@@ -62,13 +62,17 @@ function displayCart() {
         '<td>' + item.name + '</td>' +
         '<td>' + item.price + '</td>' +
         '<td><input type="number" id="quantity_64ed95c040d00" class="input-text qty text form-control" name="quantity" value="1" aria-label="Product quantity" size="4" min="1" max="" step="1" placeholder="" inputmode="numeric" autocomplete="off" style="max-width: 75px;"></td>' +
-        '<td>' + item.price +'</td>' +
+        '<td>' + item.price + '</td>' +
         '<td><button class="btn-remove" data-index="' + index + '"><ion-icon name="close"></ion-icon></button></td>';
 
       cartItems.appendChild(itemRow);
     });
   } else {
-   document.querySelector(".table").textContent="Your cart is empty"                              /*  cartItems.innerHTML = '<p>Your cart is empty.</p>'; */
+    document.querySelector(".table").innerHTML = "<h1>Your cart is empty</h1>"                              /*  cartItems.innerHTML = '<p>Your cart is empty.</p>'; */
+    var h1Element = document.querySelector(".table h1");
+    h1Element.innerHTML = "<h1>Your cart is empty</h1>";
+    h1Element.classList.add("head3");
+
   }
 
 
@@ -76,15 +80,15 @@ function displayCart() {
   var totalPrice = calculateTotalPrice();
 
   totalPriceElement.textContent = '$' + totalPrice;
-
 }
 
+// caluculating product prices
 function calculateTotalPrice() {
   var totalPrice = 0;
 
   cart1.forEach((item) => {
     // Extract the price from the item and convert it to a number
-    const price = parseFloat(item.price.replace('$', '').replace(',', ''));
+    var price = parseFloat(item.price.replace('$', '').replace(',', ''));
 
     if (!isNaN(price)) {
       totalPrice += price;
@@ -102,7 +106,6 @@ function removeFromCart(index) {
   displayCart(); // Re-display the cart
 }
 
-                                                                
 // Display the cart when the page loads
 document.addEventListener('DOMContentLoaded', function () {
   displayCart();
@@ -116,9 +119,11 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
- function submission(){
-  Swal.fire('Success', "Check Out Successfull", 'success');
- }
+
+function submission() {
+  Swal.fire('Success', "Check Out Sucessful", 'success');
+  sessionStorage.clear();
+}
 
 
 
